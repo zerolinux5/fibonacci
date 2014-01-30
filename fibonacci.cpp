@@ -10,10 +10,13 @@ int fibonacci(int f){
 }
 
 int main () {
-  int question;
-  cout << "Enter starting number ";
-  cin >> question;
-  int answer = fibonacci(question);
-  cout << answer;
-  return 0;
+  int question,answer, again;
+  while(again != 0){
+	  cout << "Enter starting number ";
+	  cin >> question;
+	  answer = fibonacci(question);
+	  cout << answer << "\nEnter another number? (1/0)";
+	  cin >> again; 
+	}
+	return 0;
 }
