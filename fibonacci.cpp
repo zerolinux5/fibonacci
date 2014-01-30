@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+
+//Using recursion to get the answer slower
 int fibonacciR(int f){
 	if (f <= 2){
 		return 1;
@@ -9,6 +11,7 @@ int fibonacciR(int f){
 	}
 }
 
+//Using iteration, faster
 int fibonacciI(int f){
 	int result = 1;
 	int result2 = 0;
@@ -22,15 +25,28 @@ int fibonacciI(int f){
 }
 
 
-
+//main class with loop
 int main () {
-  int question,answer, again;
+  int question,answer = 0, again, functionNumber;
   while(again != 0){
+  	  cout << "Recursive or Iterative? : (1/0) ";
+  	  cin >> functionNumber;
 	  cout << "Enter starting number ";
 	  cin >> question;
-	  answer = fibonacciI(question);
-	  cout << answer << "\nEnter another number? (1/0) :";
-	  cin >> again; 
+	  if (functionNumber == 1){
+	  	answer = fibonacciR(question);	  
+	  	cout << answer << "\nEnter another number? (1/0) :";
+	  	cin >> again; 
+	  	functionNumber = 3;
+	  } else if (functionNumber == 0){
+	  	answer = fibonacciI(question);
+	  	cout << answer << "\nEnter another number? (1/0) :";
+	  	cin >> again; 
+	  	functionNumber = 3;
+	  } else {
+	  	cout << "Bye.\n";
+	  	again = 0;
+	  }
 	}
 	return 0;
 }
