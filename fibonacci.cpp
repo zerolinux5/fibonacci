@@ -33,19 +33,22 @@ int main () {
   	  cin >> functionNumber;
 	  cout << "Enter starting number ";
 	  cin >> question;
-	  if (functionNumber == 1){
-	  	answer = fibonacciR(question);	  
-	  	cout << answer << "\nEnter another number? (1/0) :";
-	  	cin >> again; 
-	  	functionNumber = 3;
-	  } else if (functionNumber == 0){
-	  	answer = fibonacciI(question);
-	  	cout << answer << "\nEnter another number? (1/0) :";
-	  	cin >> again; 
-	  	functionNumber = 3;
-	  } else {
-	  	cout << "Bye.\n";
-	  	again = 0;
+	  switch (functionNumber){
+	  	case 1:
+		  	answer = fibonacciR(question);	  
+		  	cout << answer << "\nEnter another number? (1/0) :";
+		  	cin >> again; 
+		  	functionNumber = 3;
+	  	break;
+	  	case 0:
+		  	answer = fibonacciI(question);
+		  	cout << answer << "\nEnter another number? (1/0) :";
+		  	cin >> again; 
+		  	functionNumber = 3;
+	  	break;
+	  	default:
+	  		cout << "Bye.\n";
+	  		again = 0;
 	  }
 	}
 	return 0;
